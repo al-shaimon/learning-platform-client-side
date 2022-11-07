@@ -1,29 +1,29 @@
 import React, { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { ComputerDesktopIcon } from '@heroicons/react/24/solid';
+import { CodeBracketIcon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../Context/UserContext';
 import { UserIcon } from '@heroicons/react/24/solid';
 import { useState, useEffect } from 'react';
 import './Navbar.css';
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('Light');
   const storedMode = localStorage.getItem('mode');
   if (storedMode == null) {
-    localStorage.setItem('mode', 'light');
+    localStorage.setItem('mode', 'Light');
   }
   useEffect(() => {
     setMode(storedMode);
   }, [storedMode]);
 
   const handleClick = () => {
-    if (storedMode === 'light' || storedMode === null) {
+    if (storedMode === 'Light' || storedMode === null) {
       localStorage.removeItem('mode');
-      localStorage.setItem('mode', 'dark');
-      setMode('dark');
+      localStorage.setItem('mode', 'Dark');
+      setMode('Dark');
     } else {
       localStorage.removeItem('mode');
-      localStorage.setItem('mode', 'light');
+      localStorage.setItem('mode', 'Light');
       setMode('Light');
     }
   };
@@ -127,8 +127,8 @@ const Navbar = () => {
           </div>
 
           <NavLink to="/courses" className="btn btn-ghost normal-case text-xl">
-            <ComputerDesktopIcon className="w-6 h-6" />
-            Learn Program With AP
+            <CodeBracketIcon className="w-10 h-6" />
+            Learn Code
           </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -180,12 +180,12 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <NavLink className="btn btn-ghost normal-case text-purple-700 text-xl">
+              <NavLink className="btn btn-ghost normal-case">
                 <UserIcon className="w-6 h-6" />
               </NavLink>
 
               <NavLink to="/login">
-                <button className="btn btn-outline btn-warning">Login</button>
+                <button className="btn btn-outline btn-success">Login</button>
               </NavLink>
             </>
           )}
