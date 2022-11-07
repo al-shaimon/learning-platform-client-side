@@ -1,6 +1,6 @@
 # Welcome to my Learn Code project
 
-# Live site link: 
+# Live site link: https://course-app-c48b9.web.app/
 
 1. This is an ed-tech website.
 2. In course section you will find so many course about web development.
